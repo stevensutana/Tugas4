@@ -1,0 +1,6 @@
+class AddStatus < ActiveRecord::Migration
+  def change
+   add_column :gambars, :status, :string
+   add_column :gambars, :gambar_status, :string
+  end
+end

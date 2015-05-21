@@ -1,0 +1,34 @@
+class GambarsController < ApplicationController
+  def index
+    @gambars = Gambar.all
+  end
+
+  def new
+    @gambar = Gambar.new
+  end
+
+  def create
+    @gambar = Gambar.new(params_gambar)
+    if @gambar.save
+      flash[:notice] = "Success Add Records"
+      redirect_to action: 'index'
+    else flash[:error] = "Data not valid"
+    	render 'new'
+    end
+  end
+
+  def show
+    @gambar = Gambar.find_by_id(params[:id])
+  end
+
+  def edit
+    @gambar = Gambar.find_by_id(params[:id])
+    debugger
+  end
+
+  private 
+  def params_gambar
+      params.require(:gambar).permit(:title, :content, :status)
+  end
+
+end

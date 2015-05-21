@@ -5,9 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="application.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
+<UL>
+  	<li><%= link_to 'HOME', gambars_path(), :class=>"Nav"%></li>
+  	<li><%= link_to 'UPLOAD GAMBAR', new_gambar_path(), :class=>"Nav" %></li>
+  </UL>
+  <hr/>
 <%= yield %>
 
 </body>

@@ -1,0 +1,14 @@
+
+ <% @gambars.each do |gambar| %>
+    <h3 id="judul"><%= gambar.title %></h3>
+    <p>
+    <%= link_to (image_tag gambar.nama_gambar.url(:thumb)), gambar_path(gambar)  %><br>
+     
+    </p>
+	<span><%= link_to 'edit', edit_gambar_path(gambar.id),:class=>"Nav" %><span>
+	<span> | </span>
+	<span><%= link_to 'delete', gambar_path(gambar.id),:class=>"Nav", method: "DELETE", data:
+	{confirm: 'Delete this data ? '} %><span>
+	</p>
+    <hr/>
+  <% end %>

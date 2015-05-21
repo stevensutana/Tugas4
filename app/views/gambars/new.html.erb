@@ -1,0 +1,11 @@
+
+<%= form_for @gambar do |f| %>
+   <%= f.label :title %>
+   <%= f.text_field :title %>
+   <%= @gambar.errors[:title].first unless @gambar.errors[:title].blank? %>
+   <br/>
+   <%= f.file_field :nama_gambar %>
+   <%= @gambar.errors[:nama_gambar].first unless @gambar.errors[:nama_gambar].blank?%>
+   <br/>
+   <%= f.submit :submit %>
+  <% end %>

@@ -1,0 +1,12 @@
+<%= form_for @gambar do |g| %>
+<%= g.label :title %>
+<%= g.text_field :title %>
+<br/>
+<%= g.file_field :nama_gambar %>
+<%= @gambar.errors[:nama_gambar].first unless @gambar.errors[:nama_gambar].blank?%>
+<br/>
+<%= g.submit :submit %>
+<% end %>
+<div>
+<%= link_to "back to index", gambars_path,:class=>"Nav" %>
+</div>	

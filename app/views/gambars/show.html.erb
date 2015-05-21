@@ -1,0 +1,3 @@
+<h3><%= @gambar.title %></h3>
+ <%= link_to (image_tag @gambar.nama_gambar.url(:medium)), gambar_path(@gambar) %><br>
+<p><%= link_to 'back to index', gambars_path,:class=>"Nav" %></p>
